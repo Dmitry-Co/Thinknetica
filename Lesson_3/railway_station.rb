@@ -24,10 +24,10 @@ class Station
   end
 end
 
-# route.stations
-
 # 2
 class Route
+  attr_reader :stations
+
   def initialize(start_station, end_station)
     @stations = [start_station, end_station]
   end
@@ -39,10 +39,6 @@ class Route
 
   def delete_station(station)
     @stations.delete(station)
-  end
-
-  def stations_list
-    [start_station, mid_stations, end_station].flatten!.compact
   end
 end
 
