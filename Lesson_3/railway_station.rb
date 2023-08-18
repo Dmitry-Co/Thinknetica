@@ -28,10 +28,8 @@ end
 
 # 2
 class Route
-  attr_reader :stations
-
-def initialize(start_station, end_station)
-    @stations = []
+  def initialize(start_station, end_station)
+    @stations = [start_station, end_station]
   end
 
   def add_station(index, station)
@@ -97,7 +95,14 @@ class Train
   def move_forward
     return unless next_station
     current_station.send_train(self)
-    @current_station_index = 1
+    @current_station_index += 1
+    current_station.add_train(self)
+  end
+
+  def move_back
+    return unless previous_station
+    current_station.send_train(self)
+    @current_station_index -= 1
     current_station.add_train(self)
   end
 end
