@@ -1,0 +1,3 @@
+def Vagon
+  
+end
