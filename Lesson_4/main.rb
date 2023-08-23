@@ -1,11 +1,14 @@
-require_relative 'lib/station'
-require_relative 'lib/route'
-require_relative 'lib/train'
+require_relative 'lib/cargo_train'
+require_relative 'lib/cargo_vagon'
 require_relative 'lib/passenger_train'
 require_relative 'lib/passenger_vagon'
-require_relative 'lib/cargo_train'
+require_relative 'lib/route'
+require_relative 'lib/station'
+require_relative 'lib/train'
+require_relative 'lib/vagon'
 
 class Main
+
   ACTIONS = [
     { id: '1', title: 'Создать станцию', action: :create_station },
     { id: '2', title: 'Создать поезд', action: :create_train },
@@ -102,58 +105,132 @@ class Main
     end
   end
 
+  def create_route 
+    if @stations.size < 2 
+      puts "Для построения маршрута необходимо большее количество станций!"
+    else
+      begin
+        @stations.each { |station| puts station.title }
+        puts "Выберите начальную станцию: "
+        input = gets.chomp
+        start_station = @stations.select { |station| station.title == input }
+
+        puts "Выберите конечную станцию: "
+        input = gets.chomp
+        end_station = @stations.select { |station| station.title == input }
+
+        @routes << Route.new(start_station[0], end_station[0])
+        puts "Маршрут создан!"
+      rescue => error
+        p error
+        puts "Данные введены некоректно, попробуйте еще раз!"
+        retry
+      end
+    end
+  end
+
+  def find_route 
+    puts "Задайте маршрут?"
+
+    count = 0
+    @routes.each do |route| 
+      p "#{count} - #{route}" 
+      count += 1
+    end
+    
+    @routes[gets.chomp.to_i] 
+  end
+
+  def find_station 
+    puts "Задайте станцию?"
+    @stations.each { |station| puts station.title }
+
+    gets.chomp
+  end
+
+  def find_train
+    count = 0
+      @trains.each do |train| 
+        puts "#{count} - #{train}"
+        count += 1
+      end
+
+    @trains[gets.chomp.to_i]
+  end
+
+  def station_action
+    puts "Для добавления станции нажмите 1, для удаления станции нажмите 2"
+    input = gets.chomp
+  
+    case input 
+    when "1"  
+      find_route.add_station(get_station(find_station)[0])
+    when "2"  
+      find_route.delete_station(get_station(find_station)[0])
+    end
+  end
+
+  def get_station(input)
+    @stations.select { |station| station.title == input }
+  end
+
+  def add_train_route 
+    puts "Какому поезду хотите добавить маршрут?"
+    find_train.assign_route(find_route)
+  end
+
+  def wagon_actions
+    puts "В каком поезде хотите добавить или отцепить вагоны?"
+    train_f = find_train 
+
+    puts "Отцепить(1) или добавить(2)?"
+    action = gets.chomp
+    case action
+    when "1"
+      if train_f.wagons.size < 1
+        puts "У поезда нет прицепленных вагонов!" 
+      else
+        train_f.unhook_the_wagon
+        puts "Вагон отцеплен!"
+      end
+    when "2"
+      wagon = create_wagon(train_f)
+      train_f.attach_a_wagon(wagon)
+      puts "Вагон добавлен!"
+    end
+  end
+
+  def move_train
+    puts "Какой поезд вы хотите передвигать?"
+    find_train.go_next_station
+  end
+
+  def check_stations
+    puts "Станции - #{@stations}"
+  end
+
+  def check_trains
+    @stations.each do |station|
+      station.each_train do |train|
+      puts "Станция - #{station.title}"
+      puts "Номер поезда - #{train.number}, тип - #{train.type}, кол-во вагонов - #{train.wagons.size}"
+      end
+    end
+  end
+
+  def check_wagons
+    number = 0
+    @trains.each do |train|
+      train.each_wagon do |wagon|
+        puts "Номер вагона - #{number}, тип - #{wagon.type}, свободно места- #{wagon.free_place}"
+        number += 1
+      end
+    end
+  end
+
+  def exit 
+    "0"
+  end
+end
+
 Main.new.start
-
-# tests
-station_ekb = Station.new('Ekaterinburg')
-station_tyu = Station.new('Tyumen')
-station_oms = Station.new('Omsk')
-station_mos = Station.new('Moscow')
-
-route_ekb_mos = Route.new(station_ekb, station_mos)
-route_ekb_mos.add_station(1, station_tyu)
-route_ekb_mos.add_station(2, station_oms)
-route_ekb_mos.stations
-
-route_ekb_mos.delete_station(station_oms)
-route_ekb_mos.stations
-
-train11 = Train.new('1CT', 'cargo', 13)
-train44 = Train.new('4PT', 'pass', 10)
-
-# cargo
-train11.set_speed(30)
-p train11.speed
-train11.stop
-p train11.speed
-
-train11.add_vagon
-p train11.vagons_count
-train11.remove_vagon
-p train11.vagons_count
-
-p train11.route
- train11.set_route(route_ekb_mos)
- train11.route.stations
-
-train11.move_forward
-train11.route.stations
-p train11.current_station.name
-train11.move_forward
-p train11.current_station.name
-train11.move_back
-p train11.current_station.name
-p train11.current_station.train_type('cargo')
-p train11.next_station.train_type('cargo')
-p train11.previous_station.train_type('cargo')
-
-# pass
-train44.add_vagon
-p train44.vagons_count
-train44.route
-train44.set_route(route_ekb_mos)
-p train44.set_speed(30)
-train44.move_forward
-
-p train44.current_station.name
-print train44.current_station.train_type('pass')
