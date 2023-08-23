@@ -7,7 +7,7 @@ class Route
   end
 
   def add_station(index, station)
-    @stations.insert(-1, station)
+    @stations.insert(-2, station)
     # @stations << station
   end
 
