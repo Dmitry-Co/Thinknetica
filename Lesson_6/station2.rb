@@ -1,6 +1,7 @@
 # 1
 class Station
   include InstanceCounter
+  include Validation
 
   STATION_FORMAT = /^[a-zA-Z]+$/
 
@@ -19,12 +20,6 @@ class Station
     @trains = []          
     @@all.push(self)
     register_instance
-  end
-
-  def valid?
-    validate!
-  rescue
-    false
   end
 
   def add_train(train)    
@@ -48,9 +43,12 @@ class Station
   protected
 
   def validate!
-    raise "Номер станции не может быть пустым!" if title.nil?
-    raise "Номер станции не может быть менее 5ти символов" if title.length < 5
-    raise "Номер станции не является объектом класса String и написан не на англиском языке" unless title.match?(STATION_FORMAT)
-    true
+    errors = []
+    errors << "Номер станции не может быть пустым" if title.nil? || title == ""
+    #errors << "Номер поезда не может быть пустым" if title.blank?
+    #errors << "Номер поезда не может быть пустым" if title.empty?
+    errors << "Номер станции не может быть менее 5ти символов" if title.length < 5
+    errors << "Номер станции не является объектом класса String и написан не на англиском языке" unless title.match?(STATION_FORMAT)
+    raise errors.join(", \n") unless errors.empty?
   end
 end

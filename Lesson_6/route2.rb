@@ -2,6 +2,7 @@
 class Route
   attr_reader :first_station, :last_station, :stations
   include InstanceCounter
+  include Validation
 
   @@all = [] 
 
@@ -11,12 +12,6 @@ class Route
     @stations = [first_station, last_station]
     validate!
     register_instance
-  end
-
-  def valid?
-    validate!
-  rescue
-    false
   end
 
   def self.all
@@ -35,6 +30,5 @@ class Route
 
   def validate!
     raise "Станция должна быть объектом класса станций (Station)!" if stations.any? { |station| !station.is_a?(Station) }
-    true
   end
 end

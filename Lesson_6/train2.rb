@@ -1,6 +1,7 @@
 class Train
   include Manufacturer
   include InstanceCounter
+  include Validation
 
   TRAIN_FORMAT = /^[a-zA-Z\d]{3}-?[a-zA-Z\d]{2}$/
 
@@ -16,12 +17,6 @@ class Train
     @speed = 0
     @@all.push(self)
     register_instance
-  end
-
-  def valid?
-    validate!
-  rescue
-    false
   end
 
   def self.find(num)
@@ -83,8 +78,9 @@ class Train
   protected
 
   def validate!
-    raise "Номер поезда не может быть пустым!" if number.nil?
-    raise "Формат номера поезда необходимо вводить по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел." if number !~ TRAIN_FORMAT
-    true
+    errors = []
+    errors << "Номер поезда не может быть пустым" if number.nil? || number == ""
+    errors << "Формат номера поезда необходимо вводить по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел." if number !~ TRAIN_FORMAT
+    raise errors.join(", \n") unless errors.empty?
   end
 end

@@ -1,5 +1,6 @@
 require_relative 'instance_counter2'
 require_relative 'manufacturer2'
+require_relative 'validation2'
 require_relative 'train2'
 require_relative 'station2'
 require_relative 'route2'
@@ -122,10 +123,11 @@ def create_station
    2) Формат строки и на английском языке"
   begin
     title = gets.chomp
+
     @stations << Station.new(title)
     puts "Станция успешно создана!"
   rescue StandardError => e
-    puts "Ввод не верен: #{e}, повторите еще раз!"
+    puts "Ввод не верен:\n#{e}, повторите еще раз!"
     retry
   end
 end
@@ -180,7 +182,7 @@ def create_train
       puts "Поезд #{@trains << PassengerTrain.new(number)} был успешно создан!"
     end
   rescue StandardError => e
-    puts "Ввод не верен: #{e}, повторите еще раз!"
+    puts "Ввод не верен:\n#{e}, повторите еще раз!"
     retry
   end
 end
