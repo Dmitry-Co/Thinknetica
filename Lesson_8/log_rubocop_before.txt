@@ -1,0 +1,664 @@
+Before:
+
+dmd@MacBook-Pro-DMD Lesson_8 % rubocop
+Inspecting 12 files
+CCCWCCCCCCCC
+
+Offenses:
+
+cargo_train2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CargoTrain.
+class CargoTrain < Train 
+^^^^^^^^^^^^^^^^
+cargo_train2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CargoTrain < Train 
+^
+cargo_train2.rb:1:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+class CargoTrain < Train 
+                        ^
+cargo_train2.rb:2:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def initialize(number) 
+                        ^
+cargo_train2.rb:3:10: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    super                
+         ^^^^^^^^^^^^^^^^
+cargo_train2.rb:4:19: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @type = :cargo        
+                  ^^^^^^^^
+cargo_train2.rb:6:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+cargo_wagon2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CargoWagon.
+class CargoWagon < Wagon        
+^^^^^^^^^^^^^^^^
+cargo_wagon2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CargoWagon < Wagon        
+^
+cargo_wagon2.rb:1:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+class CargoWagon < Wagon        
+                        ^^^^^^^^
+cargo_wagon2.rb:2:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def initialize(number)        
+                        ^^^^^^^^
+cargo_wagon2.rb:3:19: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @type = :cargo              
+                  ^^^^^^^^^^^^^^
+cargo_wagon2.rb:4:10: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    super                       
+         ^^^^^^^^^^^^^^^^^^^^^^^
+instance_counter2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module InstanceCounter.
+module InstanceCounter
+^^^^^^^^^^^^^^^^^^^^^^
+instance_counter2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module InstanceCounter
+^
+instance_counter2.rb:7:3: C: Style/Documentation: Missing top-level documentation comment for module InstanceCounter::ClassMethods.
+  module ClassMethods 
+  ^^^^^^^^^^^^^^^^^^^
+instance_counter2.rb:7:22: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  module ClassMethods 
+                     ^
+instance_counter2.rb:18:3: C: Style/Documentation: Missing top-level documentation comment for module InstanceCounter::InstanceMethods.
+  module InstanceMethods 
+  ^^^^^^^^^^^^^^^^^^^^^^
+instance_counter2.rb:18:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  module InstanceMethods 
+                        ^
+instance_counter2.rb:23:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+main2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require_relative 'instance_counter2'
+^
+main2.rb:13:1: C: Metrics/ClassLength: Class has too many lines. [241/100]
+class Main ...
+^^^^^^^^^^
+main2.rb:13:1: C: Style/Documentation: Missing top-level documentation comment for class Main.
+class Main
+^^^^^^^^^^
+main2.rb:14:1: C: [Correctable] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+main2.rb:15:13: C: [Correctable] Style/MutableConstant: Freeze mutable objects assigned to constants.
+  ACTIONS = [ ...
+            ^
+main2.rb:40:39: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      break if call_action(choice) == "0"
+                                      ^^^
+main2.rb:46:3: C: Metrics/MethodLength: Method has too many lines. [12/10]
+  def show_menu ...
+  ^^^^^^^^^^^^^
+main2.rb:47:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 1  для создания станции"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:48:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 2  для создания поезда"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:49:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 3  для создания маршрута"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:50:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 4  для удаления или добавления станции" 
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:50:58: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    puts "Нажмите 4  для удаления или добавления станции" 
+                                                         ^
+main2.rb:51:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 5  для назначения маршрута поезду" 
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:51:53: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    puts "Нажмите 5  для назначения маршрута поезду" 
+                                                    ^
+main2.rb:52:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 6  для добавления или удаления вагона у поезда" 
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:52:66: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    puts "Нажмите 6  для добавления или удаления вагона у поезда" 
+                                                                 ^
+main2.rb:53:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 7  для перемещения поезда по маршруту" 
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:53:57: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    puts "Нажмите 7  для перемещения поезда по маршруту" 
+                                                        ^
+main2.rb:54:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 8  для показа списка станций" 
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:54:48: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    puts "Нажмите 8  для показа списка станций" 
+                                               ^
+main2.rb:55:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 9  для показа списка поездов на станции"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:56:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 10 показать список вагонов у поездов"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:57:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 11 чтобы занять место или объем в вагоне"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:58:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Нажмите 0 для выхода"
+         ^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:65:7: W: [Correctable] Lint/UselessAssignment: Useless assignment to variable - method_name.
+      method_name = hash_of_action[:action] 
+      ^^^^^^^^^^^
+main2.rb:65:44: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+      method_name = hash_of_action[:action] 
+                                           ^
+main2.rb:67:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      puts "Действие не найдено"
+           ^^^^^^^^^^^^^^^^^^^^^
+main2.rb:70:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+main2.rb:74:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+main2.rb:75:1: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 0 instead of 2).
+# RouteActions
+^^^^^^^^^^^^^^
+main2.rb:76:17: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def find_route 
+                ^
+main2.rb:77:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "В какой маршрут?"
+         ^^^^^^^^^^^^^^^^^^
+main2.rb:80:28: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @routes.each do |route| 
+                           ^
+main2.rb:81:30: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+      p "#{count} - #{route}" 
+                             ^
+main2.rb:84:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+main2.rb:85:29: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @routes[gets.chomp.to_i] 
+                            ^
+main2.rb:88:3: C: Metrics/AbcSize: Assignment Branch Condition size for new_route is too high. [<7, 18, 5> 19.95/17]
+  def new_route ...
+  ^^^^^^^^^^^^^
+main2.rb:94:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #start_station = @stations.select(&:title == input) - не работает, 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:94:71: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    #start_station = @stations.select(&:title == input) - не работает, 
+                                                                      ^
+main2.rb:95:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #пишет wrong argument type FalseClass (expected Proc). 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:95:59: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    #пишет wrong argument type FalseClass (expected Proc). 
+                                                          ^
+main2.rb:100:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #end_station = @stations.select(&:title == input) - та же ситуация, что и выше.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:106:19: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def create_route 
+                  ^
+main2.rb:107:26: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    if @stations.size < 2 
+                         ^
+main2.rb:108:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      puts "Вы ввели недостаточно станций!"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:111:7: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+       new_route
+      ^
+main2.rb:120:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def find_station  ...
+^^^^^^^^^^^^^^^^^
+main2.rb:120:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def find_station 
+
+main2.rb:120:17: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+def find_station 
+                ^
+main2.rb:121:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "Какую станцию?"
+       ^^^^^^^^^^^^^^^^
+main2.rb:123:62: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  # @stations.each(puts &:title) - пробовал так, не работает. 
+                                                             ^
+main2.rb:128:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def create_station ...
+^^^^^^^^^^^^^^^^^^
+main2.rb:128:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def create_station
+
+main2.rb:128:1: C: Metrics/MethodLength: Method has too many lines. [11/10]
+def create_station ...
+^^^^^^^^^^^^^^^^^^
+main2.rb:135:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Станция успешно создана!"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:142:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def station_action ...
+^^^^^^^^^^^^^^^^^^
+main2.rb:142:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def station_action
+
+main2.rb:143:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "Чтобы добавить станцию нажмите 1, чтобы удалить станцию нажмите 2"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:145:13: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  case input 
+            ^
+main2.rb:146:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  when "1"  
+       ^^^
+main2.rb:146:11: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  when "1"  
+          ^^
+main2.rb:148:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  when "2"  
+       ^^^
+main2.rb:148:11: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  when "2"  
+          ^^
+main2.rb:153:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def get_station(input) ...
+^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:153:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def get_station(input)
+
+main2.rb:162:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def check_stations ...
+^^^^^^^^^^^^^^^^^^
+main2.rb:162:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def check_stations
+
+main2.rb:167:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def find_train ...
+^^^^^^^^^^^^^^
+main2.rb:167:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def find_train
+
+main2.rb:169:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    @trains.each do |train|  ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:169:28: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @trains.each do |train| 
+                           ^
+main2.rb:176:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def create_train ...
+^^^^^^^^^^^^^^^^
+main2.rb:176:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def create_train
+
+main2.rb:176:1: C: Metrics/AbcSize: Assignment Branch Condition size for create_train is too high. [<4, 18, 4> 18.87/17]
+def create_train ...
+^^^^^^^^^^^^^^^^
+main2.rb:176:1: C: Metrics/MethodLength: Method has too many lines. [20/10]
+def create_train ...
+^^^^^^^^^^^^^^^^
+main2.rb:177:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "Вы хотите создавть грузовой(нажмите 1) или поссажирский(нажмите 2) поезд?"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:179:10: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  loop do 
+         ^
+main2.rb:180:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #break if type == "1" || type == "2"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:181:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    break if %w[1 2].include?(type)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:182:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Пожалуйста, выберайте только 1 или 2"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:185:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+main2.rb:186:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "Задайте номер поезда по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел."
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:186:121: C: Layout/LineLength: Line is too long. [141/120]
+  puts "Задайте номер поезда по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел."
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^
+main2.rb:187:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+main2.rb:190:14: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    case type 
+             ^
+main2.rb:191:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    when "1"
+         ^^^
+main2.rb:193:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    when "2"
+         ^^^
+main2.rb:202:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def add_train_route  ...
+^^^^^^^^^^^^^^^^^^^^
+main2.rb:202:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def add_train_route 
+
+main2.rb:202:20: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+def add_train_route 
+                   ^
+main2.rb:203:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "Какому поезду хотите добавить маршрут?"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:207:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def move_train ...
+^^^^^^^^^^^^^^
+main2.rb:207:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def move_train
+
+main2.rb:212:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def check_trains ...
+^^^^^^^^^^^^^^^^
+main2.rb:212:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def check_trains
+
+main2.rb:215:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+    puts "Станция - #{station.title}"
+    
+main2.rb:222:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def wagon_actions ...
+^^^^^^^^^^^^^^^^^
+main2.rb:222:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def wagon_actions
+
+main2.rb:222:1: C: Metrics/MethodLength: Method has too many lines. [17/10]
+def wagon_actions ...
+^^^^^^^^^^^^^^^^^
+main2.rb:223:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "К какомоу поезду хотите добавить или отцепить вагоны??"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:224:23: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  train_f = find_train 
+                      ^
+main2.rb:226:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "Оцепить(1) или прицепить(2)?"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:229:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  when "1"
+       ^^^
+main2.rb:230:8: C: [Correctable] Style/ZeroLengthPredicate: Use empty? instead of size < 1.
+    if train_f.wagons.size < 1
+       ^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:231:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      puts "У поезда нет прицепленных вагонов!" 
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:231:48: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+      puts "У поезда нет прицепленных вагонов!" 
+                                               ^
+main2.rb:234:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      puts "Вагон успешно отцеплен!"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:236:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  when "2"
+       ^^^
+main2.rb:239:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Вагон успешно добавлен!"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:243:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def create_wagon(train)  ...
+^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:243:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def create_wagon(train) 
+
+main2.rb:243:1: C: Metrics/MethodLength: Method has too many lines. [13/10]
+def create_wagon(train)  ...
+^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:243:24: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+def create_wagon(train) 
+                       ^
+main2.rb:244:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "На сколько расчитан вагон?"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:247:32: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    if train.type == :passenger 
+                               ^
+main2.rb:252:3: C: [Correctable] Style/RescueStandardError: Avoid rescuing without specifying an error class.
+  rescue => e
+  ^^^^^^
+main2.rb:253:7: C: [Correctable] Style/RedundantInterpolation: Prefer to_s over string interpolation.
+    p "#{e}"
+      ^^^^^^
+main2.rb:254:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    puts "Попробуйте еще раз!"
+         ^^^^^^^^^^^^^^^^^^^^^
+main2.rb:259:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def take_in_wagon ...
+^^^^^^^^^^^^^^^^^
+main2.rb:259:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def take_in_wagon
+
+main2.rb:259:1: C: Metrics/AbcSize: Assignment Branch Condition size for take_in_wagon is too high. [<7, 34, 8> 35.62/17]
+def take_in_wagon ...
+^^^^^^^^^^^^^^^^^
+main2.rb:259:1: C: Metrics/MethodLength: Method has too many lines. [27/10]
+def take_in_wagon ...
+^^^^^^^^^^^^^^^^^
+main2.rb:264:30: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  train.each_wagon do |wagon| 
+                             ^
+main2.rb:289:1: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+def check_wagons ...
+^^^^^^^^^^^^^^^^
+main2.rb:289:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+def check_wagons
+
+main2.rb:299:1: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 0 instead of 2).
+# exit
+^^^^^^
+main2.rb:300:11: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def exit 
+          ^
+main2.rb:301:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    "0"
+    ^^^
+main2.rb:305:15: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+Main.new.start
+              
+manufacturer2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module Manufacturer.
+module Manufacturer
+^^^^^^^^^^^^^^^^^^^
+manufacturer2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module Manufacturer
+^
+manufacturer2.rb:4:7: C: Naming/AccessorMethodName: Do not prefix writer method names with set_.
+  def set_manufacturer(title)
+      ^^^^^^^^^^^^^^^^
+manufacturer2.rb:7:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+passenger_train2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class PassengerTrain.
+class PassengerTrain < Train  
+^^^^^^^^^^^^^^^^^^^^
+passenger_train2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class PassengerTrain < Train  
+^
+passenger_train2.rb:1:29: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+class PassengerTrain < Train  
+                            ^^
+passenger_train2.rb:2:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def initialize(number)      
+                        ^^^^^^
+passenger_train2.rb:3:10: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    super                     
+         ^^^^^^^^^^^^^^^^^^^^^
+passenger_train2.rb:4:23: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @type = :passenger        
+                      ^^^^^^^^
+passenger_train2.rb:6:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+passenger_wagon2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class PassengerWagon.
+class PassengerWagon < Wagon
+^^^^^^^^^^^^^^^^^^^^
+passenger_wagon2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class PassengerWagon < Wagon
+^
+passenger_wagon2.rb:11:1: C: [Correctable] Layout/TrailingEmptyLines: 2 trailing blank lines detected.
+route2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# 2
+^
+route2.rb:3:3: C: [Correctable] Layout/EmptyLinesAroundAttributeAccessor: Add an empty line after attribute accessor.
+  attr_reader :first_station, :last_station, :stations
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+route2.rb:7:3: C: Style/ClassVars: Replace class var @@all with a class instance var.
+  @@all = [] 
+  ^^^^^
+route2.rb:7:13: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  @@all = [] 
+            ^
+route2.rb:32:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    raise "Станция должна быть объектом класса станций (Station)!" if stations.any? { |station| !station.is_a?(Station) }
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+route2.rb:32:68: C: [Correctable] Style/IfUnlessModifier: Modifier form of if makes the line too long.
+    raise "Станция должна быть объектом класса станций (Station)!" if stations.any? { |station| !station.is_a?(Station) }
+                                                                   ^^
+route2.rb:32:121: C: [Correctable] Layout/LineLength: Line is too long. [121/120]
+    raise "Станция должна быть объектом класса станций (Station)!" if stations.any? { |station| !station.is_a?(Station) }
+                                                                                                                        ^
+route2.rb:34:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+station2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# 1
+^
+station2.rb:8:21: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  attr_reader :title     
+                    ^^^^^
+station2.rb:9:24: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  attr_accessor :trains   
+                       ^^^
+station2.rb:10:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+station2.rb:11:3: C: Style/ClassVars: Replace class var @@all with a class instance var.
+  @@all = []              
+  ^^^^^
+station2.rb:11:13: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  @@all = []              
+            ^^^^^^^^^^^^^^
+station2.rb:13:15: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def self.all            
+              ^^^^^^^^^^^^
+station2.rb:17:24: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def initialize(title)   
+                       ^^^
+station2.rb:20:17: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @trains = []          
+                ^^^^^^^^^^
+station2.rb:25:23: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def add_train(train)    
+                      ^^^^
+station2.rb:28:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+station2.rb:29:26: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def remove_train(train) 
+                         ^
+station2.rb:33:33: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def return_train_by_type(type)                 
+                                ^^^^^^^^^^^^^^^^^
+station2.rb:36:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+station2.rb:37:19: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  # def each_train           
+                  ^^^^^^^^^^^
+station2.rb:39:21: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  #     yield(train)       
+                    ^^^^^^^
+station2.rb:52:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    errors << "Номер станции не может быть пустым" if title.empty?
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+station2.rb:53:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #errors << "Номер поезда не может быть пустым" if title.blank?
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+station2.rb:54:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #errors << "Номер поезда не может быть пустым" if title.nil? || title == ""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+station2.rb:55:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    errors << "Номер станции не может быть менее 3х символов" if title.length < 3
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+station2.rb:56:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    errors << "Номер станции не является объектом класса String и написан не на англиском языке" unless title.match?(STATION_FORMAT)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+station2.rb:56:98: C: [Correctable] Style/IfUnlessModifier: Modifier form of unless makes the line too long.
+    errors << "Номер станции не является объектом класса String и написан не на англиском языке" unless title.match?(STATION_FORMAT)
+                                                                                                 ^^^^^^
+station2.rb:56:121: C: Layout/LineLength: Line is too long. [132/120]
+    errors << "Номер станции не является объектом класса String и написан не на англиском языке" unless title.match?(STATION_FORMAT)
+                                                                                                                        ^^^^^^^^^^^^
+station2.rb:59:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+train2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Train.
+class Train
+^^^^^^^^^^^
+train2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Train
+^
+train2.rb:10:3: C: Style/ClassVars: Replace class var @@all with a class instance var.
+  @@all = []
+  ^^^^^
+train2.rb:22:63: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @@all.select { |train| train.number == num ? train : nil } 
+                                                              ^
+train2.rb:48:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless next_station
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:49:5: C: [Correctable] Style/SafeNavigation: Use safe navigation (&.) instead of checking if an object exists before calling the method.
+    current_station.remove_train(self) if current_station
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:55:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless previous_station
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:56:5: C: [Correctable] Style/SafeNavigation: Use safe navigation (&.) instead of checking if an object exists before calling the method.
+    current_station.remove_train(self) if current_station
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:70:5: C: [Correctable] Style/RedundantSelf: Redundant self detected.
+    self.wagons.pop
+    ^^^^
+train2.rb:74:5: C: [Correctable] Style/RedundantSelf: Redundant self detected.
+    self.wagons << wagon if wagon.type == type
+    ^^^^
+train2.rb:77:19: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  # def each_wagon 
+                  ^
+train2.rb:82:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+train2.rb:87:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+train2.rb:92:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    errors << "Номер поезда не может быть пустым" if number.nil? || number == ""
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:92:79: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    errors << "Номер поезда не может быть пустым" if number.nil? || number == ""
+                                                                              ^^
+train2.rb:93:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    errors << "Формат номера поезда необходимо вводить по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел." if number !~ TRAIN_FORMAT
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:93:121: C: Layout/LineLength: Line is too long. [193/120]
+    errors << "Формат номера поезда необходимо вводить по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел." if number !~ TRAIN_FORMAT
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+train2.rb:93:169: C: [Correctable] Style/IfUnlessModifier: Modifier form of if makes the line too long.
+    errors << "Формат номера поезда необходимо вводить по типу: комбинация 3х английских букв или чисел, дефис(необязателен), комбинация 2х английских букв или чисел." if number !~ TRAIN_FORMAT
+                                                                                                                                                                        ^^
+train2.rb:96:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+validation2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module Validation.
+module Validation
+^^^^^^^^^^^^^^^^^
+validation2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module Validation
+^
+validation2.rb:5:3: C: [Correctable] Style/RescueStandardError: Avoid rescuing without specifying an error class.
+  rescue
+  ^^^^^^
+validation2.rb:8:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+wagon2.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Wagon.
+class Wagon
+^^^^^^^^^^^
+wagon2.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Wagon
+^
+wagon2.rb:4:47: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  attr_reader :type, :total_place, :used_place 
+                                              ^
+wagon2.rb:6:30: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def initialize(total_place)  
+                             ^^
+wagon2.rb:8:20: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    @used_place = 0                           
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wagon2.rb:11:17: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def free_place 
+                ^
+wagon2.rb:14:4: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+end                 
+   ^^^^^^^^^^^^^^^^^
+wagon2.rb:14:5: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end                 
+    ^^^^^^^^^^^^^^^^
+
+12 files inspected, 226 offenses detected, 196 offenses autocorrectable

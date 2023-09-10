@@ -1,0 +1,87 @@
+dmd@MacBook-Pro-DMD Lesson_8 % rubocop -A
+Inspecting 12 files
+CCCCCCCCCCCC
+
+Offenses:
+
+cargo_train2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CargoTrain.
+class CargoTrain < Train
+^^^^^^^^^^^^^^^^
+cargo_wagon2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CargoWagon.
+class CargoWagon < Wagon
+^^^^^^^^^^^^^^^^
+instance_counter2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module InstanceCounter.
+module InstanceCounter
+^^^^^^^^^^^^^^^^^^^^^^
+instance_counter2.rb:9:3: C: Style/Documentation: Missing top-level documentation comment for module InstanceCounter::ClassMethods.
+  module ClassMethods
+  ^^^^^^^^^^^^^^^^^^^
+instance_counter2.rb:20:3: C: Style/Documentation: Missing top-level documentation comment for module InstanceCounter::InstanceMethods.
+  module InstanceMethods
+  ^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:15:1: C: Metrics/ClassLength: Class has too many lines. [240/100]
+class Main ...
+^^^^^^^^^^
+main2.rb:15:1: C: Style/Documentation: Missing top-level documentation comment for class Main.
+class Main
+^^^^^^^^^^
+main2.rb:47:3: C: Metrics/MethodLength: Method has too many lines. [12/10]
+  def show_menu ...
+  ^^^^^^^^^^^^^
+main2.rb:89:3: C: Metrics/AbcSize: Assignment Branch Condition size for new_route is too high. [<7, 18, 5> 19.95/17]
+  def new_route ...
+  ^^^^^^^^^^^^^
+main2.rb:129:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def create_station ...
+  ^^^^^^^^^^^^^^^^^^
+main2.rb:177:3: C: Metrics/AbcSize: Assignment Branch Condition size for create_train is too high. [<4, 18, 4> 18.87/17]
+  def create_train ...
+  ^^^^^^^^^^^^^^^^
+main2.rb:177:3: C: Metrics/MethodLength: Method has too many lines. [20/10]
+  def create_train ...
+  ^^^^^^^^^^^^^^^^
+main2.rb:224:3: C: Metrics/MethodLength: Method has too many lines. [17/10]
+  def wagon_actions ...
+  ^^^^^^^^^^^^^^^^^
+main2.rb:245:3: C: Metrics/MethodLength: Method has too many lines. [13/10]
+  def create_wagon(train) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^
+main2.rb:261:3: C: Metrics/AbcSize: Assignment Branch Condition size for take_in_wagon is too high. [<7, 34, 8> 35.62/17]
+  def take_in_wagon ...
+  ^^^^^^^^^^^^^^^^^
+main2.rb:261:3: C: Metrics/MethodLength: Method has too many lines. [27/10]
+  def take_in_wagon ...
+  ^^^^^^^^^^^^^^^^^
+manufacturer2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module Manufacturer.
+module Manufacturer
+^^^^^^^^^^^^^^^^^^^
+manufacturer2.rb:6:7: C: Naming/AccessorMethodName: Do not prefix writer method names with set_.
+  def set_manufacturer(title)
+      ^^^^^^^^^^^^^^^^
+passenger_train2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class PassengerTrain.
+class PassengerTrain < Train
+^^^^^^^^^^^^^^^^^^^^
+passenger_wagon2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class PassengerWagon.
+class PassengerWagon < Wagon
+^^^^^^^^^^^^^^^^^^^^
+route2.rb:10:3: C: Style/ClassVars: Replace class var @@all with a class instance var.
+  @@all = []
+  ^^^^^
+station2.rb:13:3: C: Style/ClassVars: Replace class var @@all with a class instance var.
+  @@all = []
+  ^^^^^
+train2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Train.
+class Train
+^^^^^^^^^^^
+train2.rb:12:3: C: Style/ClassVars: Replace class var @@all with a class instance var.
+  @@all = []
+  ^^^^^
+validation2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module Validation.
+module Validation
+^^^^^^^^^^^^^^^^^
+wagon2.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Wagon.
+class Wagon
+^^^^^^^^^^^
+
+12 files inspected, 26 offenses detected
+dmd@MacBook-Pro-DMD Lesson_8 % 
